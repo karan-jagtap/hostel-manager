@@ -14,6 +14,7 @@ mongoose
   .connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
   })
   .then(() => {
     console.log(`Database connection successful...`);
@@ -23,11 +24,11 @@ mongoose
   });
 
 // Step 1 :: Manage PG, Configure PG
+//app.use("/api/resources/manage", require("./routes/api/Manage.router"));
 app.use("/api/resources", require("./routes/api/Resources.route"));
 
 // PORT setup
 const PORT = process.env.PORT || 5000;
-app.use("/", (req, res) => {});
 
 // use available server port or use 5000
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));
