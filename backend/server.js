@@ -22,6 +22,7 @@ mongoose
     console.log(`Error connecting MongoDB :: ${err}`);
   });
 
+// Step 1 :: Manage PG, Configure PG
 app.use("/api/resources", require("./routes/api/Resources.route"));
 
 // PORT setup
